@@ -4,7 +4,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 client = OpenAI(
-    api_key= os.getenv("GEMINI_API_key"),
+    # "Python, look for an environment variable called GEMINI_API_KEY and give me its value."
+    api_key= os.getenv("GEMINI_API_key"), 
+    
     # direct way to add api key is 
     # api_key="GEMINI_API_KEY",
     base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
