@@ -1,0 +1,121 @@
+List of API types and their use case.
+
+
+| API                       | What it is mainly used for                         |
+| ------------------------- | -------------------------------------------------- |
+| `client.responses`        | ⭐ Main modern API for interacting with models      |
+| `client.chat.completions` | Chat/text generation using message-based format    |
+| `client.completions`      | Legacy text completion API                         |
+| `client.embeddings`       | Text → vectors                                     |
+| `client.images`           | Image generation/editing                           |
+| `client.audio`            | Speech-to-text, translation, text-to-speech        |
+| `client.videos`           | Video generation                                   |
+| `client.files`            | Upload/manage files                                |
+| `client.uploads`          | Multipart/large file uploads                       |
+| `client.vector_stores`    | Store/search information for retrieval/RAG         |
+| `client.fine_tuning`      | Fine-tuning models                                 |
+| `client.moderations`      | Detect potentially harmful content                 |
+| `client.batches`          | Run large numbers of API requests asynchronously   |
+| `client.realtime`         | Low-latency realtime text/audio conversations      |
+| `client.conversations`    | Manage conversation state/items                    |
+| `client.containers`       | Work with containers used by supported model tools |
+| `client.evals`            | Evaluate model/application performance             |
+| `client.models`           | List/retrieve/manage models                        |
+| `client.webhooks`         | Handle events/webhook verification                 |
+| `client.admin`            | Organization/project administration and usage      |
+| `client.skills`           | Skills-related API functionality                   |
+| `client.beta`             | Beta/preview functionality                         |
+
+
+Types of Prompting:
+
+1. Zero-Shot Prompting :
+
+Zero-shot prompting means asking an AI model to perform a task without giving it any examples.
+You provide only the instruction/task and the model has to understand what to do based on that instruction.
+
+Structure:
+Instruction
+     ↓
+User Input
+     ↓
+AI Response
+
+When to use
+Simple tasks
+Classification
+Question answering
+Summarization
+Translation
+Basic text generation
+
+
+2. One-Shot Prompting
+
+One-shot prompting means giving the AI exactly one example of how you want it to perform the task.
+The example demonstrates the expected input → output pattern.
+
+Structure
+Instruction
+     ↓
+One Example
+(Input → Output)
+     ↓
+Actual User Input
+     ↓
+AI Response
+
+When to use
+When zero-shot doesn't give consistent results
+When you want a specific output format
+When you want to demonstrate the expected style
+When the task is slightly more complicated
+
+
+3. Chain-of-Thought Prompting
+
+Chain-of-Thought (CoT) prompting is a technique that encourages a model to approach a problem through multiple intermediate reasoning steps rather than jumping directly to an answer.
+
+Basic idea
+Complex Problem
+      ↓
+Break into smaller steps
+      ↓
+Solve each step
+      ↓
+Final Answer
+
+It is especially useful for:
+Mathematics
+Logic
+Problem solving
+Multi-step tasks
+Complex reasoning
+
+Important point
+You don't need to ask an AI model to reveal its private chain-of-thought. For modern AI applications, a better approach is to request a concise explanation or key steps supporting the answer.
+
+
+
+4. Persona-Based Prompting
+
+Persona-based prompting means assigning the AI a specific role, identity, expertise, or personality so that it responds according to that role.
+You tell the model who it should act as.
+
+Structure
+Persona / Role
+      ↓
+Task
+      ↓
+User Input
+      ↓
+Response according to the persona
+
+Persona-based prompting is useful when you want the model to:
+Act as a teacher
+Act as an interviewer
+Act as a coding mentor
+Act as a customer-support agent
+Act as a technical expert
+Use a particular communication style
+Target a specific type of audience
