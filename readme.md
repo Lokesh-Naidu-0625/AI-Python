@@ -27,9 +27,6 @@ Learn how to build real-world AI-powered applications and understand how LLMs wo
 ## 🛠️ Technologies
 
 * Python
-* Java
-* Spring Boot
-* Spring AI
 * REST APIs
 * LLM APIs
 * Git & GitHub
